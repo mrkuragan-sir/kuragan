@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" font-family="'JetBrains Mono','Fira Code',Consolas,'DejaVu Sans Mono','Courier New',monospace">
+<style>
+.blink{animation:bl 1s steps(1) infinite} @keyframes bl{50%{opacity:0}}
+.ln{opacity:0;animation:ln .35s ease-out forwards} @keyframes ln{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.type{animation:ty .9s steps(18) .4s both} @keyframes ty{from{width:0}to{width:183.6px}}
+.c1{animation:r1 14s linear infinite;transform-origin:235px 330px} @keyframes r1{to{transform:rotate(360deg)}}
+.c2{animation:r2 9s linear infinite;transform-origin:235px 330px} @keyframes r2{to{transform:rotate(-360deg)}}
+.hx{animation:hx 2.4s ease-in-out infinite} @keyframes hx{50%{stroke-opacity:.35}}
+.logo{opacity:0;animation:ln .8s ease-out 1.2s forwards}
+.scan{animation:sc 5s linear infinite} @keyframes sc{from{transform:translateY(40px)}to{transform:translateY(600px)}}
+.cur{opacity:0;animation:ap 0s 3.46s forwards, bl 1s steps(1) 3.46s infinite} @keyframes ap{to{opacity:1}}
+</style>
+<defs>
+<clipPath id="tclip"><rect class="type" x="233.8" y="70" height="30" width="0"/></clipPath>
+<filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<radialGradient id="lg"><stop offset="0" stop-color="#00ff41" stop-opacity=".18"/><stop offset="1" stop-color="#00ff41" stop-opacity="0"/></radialGradient>
+<linearGradient id="scanl" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#00ff41" stop-opacity="0"/><stop offset="1" stop-color="#00ff41" stop-opacity=".07"/></linearGradient>
+<clipPath id="win"><rect width="1200" height="600" rx="14"/></clipPath>
+</defs>
+<g clip-path="url(#win)">
+<rect width="1200" height="600" fill="#010409"/>
+<rect width="1200" height="44" fill="#0b1410"/>
+<line x1="0" x2="1200" y1="44" y2="44" stroke="#0f3d1f"/>
+<circle cx="26" cy="22" r="7" fill="#ff5f56"/><circle cx="50" cy="22" r="7" fill="#ffbd2e"/><circle cx="74" cy="22" r="7" fill="#27c93f"/>
+<text x="600.0" y="27" text-anchor="middle" font-size="13" fill="#5f7a66">kuragan@github: ~ — zsh — 120×36</text>
+
+<text x="40" y="92" font-size="17"><tspan fill="#00ff41" font-weight="700">kuragan@github</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#2f81f7">~</tspan><tspan fill="#c9d1d9">$ </tspan></text>
+<text x="233.8" y="92" font-size="17" fill="#c9d1d9" clip-path="url(#tclip)" textLength="183.6" lengthAdjust="spacingAndGlyphs">neofetch --kuragan</text>
+
+<g class="logo">
+<circle cx="235" cy="330" r="150" fill="url(#lg)"/>
+<circle class="c1" cx="235" cy="330" r="140" fill="none" stroke="#00ff41" stroke-opacity=".55" stroke-width="2" stroke-dasharray="4 10"/>
+<circle class="c2" cx="235" cy="330" r="122" fill="none" stroke="#00ff41" stroke-opacity=".8" stroke-width="3" stroke-dasharray="120 260" stroke-linecap="round"/>
+<g class="c1"><circle cx="375" cy="330" r="5" fill="#00ff41" filter="url(#g)"/></g>
+<polygon class="hx" points="317.3,377.5 235.0,425.0 152.7,377.5 152.7,282.5 235.0,235.0 317.3,282.5" fill="#00ff41" fill-opacity=".06" stroke="#00ff41" stroke-width="2.5" filter="url(#g)"/>
+<text x="235" y="364" text-anchor="middle" font-size="96" font-weight="800" fill="#00ff41" filter="url(#g)">K</text>
+<text x="235" y="520" text-anchor="middle" font-size="12" fill="#5f7a66" letter-spacing="4">ID // KURAGAN</text>
+</g>
+
+<text class="ln" style="animation-delay:1.50s" x="470" y="150" font-size="17"><tspan fill="#00ff41" font-weight="700">kuragan</tspan><tspan fill="#c9d1d9">@</tspan><tspan fill="#00ff41" font-weight="700">github</tspan></text><text class="ln" style="animation-delay:1.62s" x="470" y="179" font-size="17"><tspan fill="#0f3d1f">──────────────────────────────────</tspan></text><text class="ln" style="animation-delay:1.74s" x="470" y="208" font-size="17"><tspan fill="#00ff41" font-weight="700">OS</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">Kuragan-OS // Engineer Edition</tspan></text><text class="ln" style="animation-delay:1.86s" x="470" y="237" font-size="17"><tspan fill="#00ff41" font-weight="700">Name</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">Emirhan Sirma</tspan></text><text class="ln" style="animation-delay:1.98s" x="470" y="266" font-size="17"><tspan fill="#00ff41" font-weight="700">Host</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">Atatürk University</tspan></text><text class="ln" style="animation-delay:2.10s" x="470" y="295" font-size="17"><tspan fill="#00ff41" font-weight="700">Major</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">Computer Engineering (EN)</tspan></text><text class="ln" style="animation-delay:2.22s" x="470" y="324" font-size="17"><tspan fill="#00ff41" font-weight="700">Location</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">Turkey</tspan></text><text class="ln" style="animation-delay:2.34s" x="470" y="353" font-size="17"><tspan fill="#00ff41" font-weight="700">Shell</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">python3 · c++ · java · kotlin</tspan></text><text class="ln" style="animation-delay:2.46s" x="470" y="382" font-size="17"><tspan fill="#00ff41" font-weight="700">Focus</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">Computer Vision · Automation · AI</tspan></text><text class="ln" style="animation-delay:2.58s" x="470" y="411" font-size="17"><tspan fill="#00ff41" font-weight="700">Running</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">Teknofest HSS · AutoTube · CV-Annotate</tspan></text><text class="ln" style="animation-delay:2.70s" x="470" y="440" font-size="17"><tspan fill="#00ff41" font-weight="700">Interests</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">Theoretical Physics · Math · Psychology</tspan></text><text class="ln" style="animation-delay:2.82s" x="470" y="469" font-size="17"><tspan fill="#00ff41" font-weight="700">GPU</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">NVIDIA RTX 4060</tspan></text><text class="ln" style="animation-delay:2.94s" x="470" y="498" font-size="17"><tspan fill="#00ff41" font-weight="700">Motto</tspan><tspan fill="#5f7a66">:</tspan><tspan x="600" fill="#c9d1d9">"Automate the boring. Build the impossible."</tspan></text>
+<g class="ln" style="animation-delay:3.06s"><rect x="470" y="533" width="34" height="18" fill="#0d1117"/><rect x="508" y="533" width="34" height="18" fill="#ff2e63"/><rect x="546" y="533" width="34" height="18" fill="#00ff41"/><rect x="584" y="533" width="34" height="18" fill="#ffcc00"/><rect x="622" y="533" width="34" height="18" fill="#2f81f7"/><rect x="660" y="533" width="34" height="18" fill="#bc8cff"/><rect x="698" y="533" width="34" height="18" fill="#00e5ff"/><rect x="736" y="533" width="34" height="18" fill="#c9d1d9"/></g>
+
+<text x="40" y="564" font-size="17"><tspan fill="#00ff41" font-weight="700">kuragan@github</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#2f81f7">~</tspan><tspan fill="#c9d1d9">$ </tspan></text>
+<rect class="cur" x="233.8" y="548" width="10" height="20" fill="#00ff41"/>
+<rect class="scan" width="1200" height="80" fill="url(#scanl)"/>
+</g>
+<rect x=".5" y=".5" width="1199" height="599" rx="14" fill="none" stroke="#00ff41" stroke-opacity=".3"/>
+</svg>

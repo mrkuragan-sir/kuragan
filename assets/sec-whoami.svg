@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="74" viewBox="0 0 1200 74" font-family="'JetBrains Mono','Fira Code',Consolas,'DejaVu Sans Mono','Courier New',monospace">
+<style>
+.blink{animation:bl 1s steps(1) infinite} @keyframes bl{50%{opacity:0}}
+.ln{animation:ln 1.6s cubic-bezier(.2,.8,.2,1) both .3s;transform-origin:left} @keyframes ln{from{transform:scaleX(0)}}
+.dot{animation:dt 3s linear infinite} @keyframes dt{from{transform:translateX(0)}to{transform:translateX(730px)}}
+.in{animation:in .8s ease-out both} @keyframes in{from{opacity:0;transform:translateX(-14px)}}
+</style>
+<defs><filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="l" x1="0" x2="1"><stop offset="0" stop-color="#00ff41" stop-opacity=".8"/><stop offset="1" stop-color="#00ff41" stop-opacity="0"/></linearGradient></defs>
+<g class="in">
+<text x="4" y="30" font-size="13" fill="#5f7a66" letter-spacing="2">[01]  kuragan@github:~$ neofetch</text>
+<text x="4" y="62" font-size="27" font-weight="700" fill="#00ff41" filter="url(#g)" letter-spacing="2">WHOAMI</text>
+<rect class="blink" x="109" y="40" width="14" height="26" fill="#00ff41"/>
+</g>
+<rect class="ln" x="141" y="52" width="1039" height="1.5" fill="url(#l)"/>
+<circle class="dot" cx="149" cy="52.7" r="3" fill="#00ff41" filter="url(#g)"/>
+</svg>

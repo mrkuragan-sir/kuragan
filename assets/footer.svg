@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" font-family="'JetBrains Mono','Fira Code',Consolas,'DejaVu Sans Mono','Courier New',monospace">
+<style>
+.ekg{stroke-dasharray:2600;animation:ek 4s linear infinite} @keyframes ek{from{stroke-dashoffset:2600}to{stroke-dashoffset:0}}
+.blink{animation:bl 1s steps(1) infinite} @keyframes bl{50%{opacity:0}}
+</style>
+<defs>
+<linearGradient id="f" x1="0" x2="1"><stop offset="0" stop-color="#00ff41" stop-opacity="0"/><stop offset=".15" stop-color="#00ff41"/><stop offset=".85" stop-color="#00ff41"/><stop offset="1" stop-color="#00ff41" stop-opacity="0"/></linearGradient>
+<filter id="g" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<path d="M0,70 H70 L82,58 L94,70 L104,70 L114,22 L126,112 L138,70 L150,70 L166,62 L182,70 H310 L322,58 L334,70 L344,70 L354,22 L366,112 L378,70 L390,70 L406,62 L422,70 H550 L562,58 L574,70 L584,70 L594,22 L606,112 L618,70 L630,70 L646,62 L662,70 H790 L802,58 L814,70 L824,70 L834,22 L846,112 L858,70 L870,70 L886,62 L902,70 H1030 L1042,58 L1054,70 L1064,70 L1074,22 L1086,112 L1098,70 L1110,70 L1126,62 L1142,70" fill="none" stroke="#00ff41" stroke-opacity=".12" stroke-width="2"/>
+<path class="ekg" d="M0,70 H70 L82,58 L94,70 L104,70 L114,22 L126,112 L138,70 L150,70 L166,62 L182,70 H310 L322,58 L334,70 L344,70 L354,22 L366,112 L378,70 L390,70 L406,62 L422,70 H550 L562,58 L574,70 L584,70 L594,22 L606,112 L618,70 L630,70 L646,62 L662,70 H790 L802,58 L814,70 L824,70 L834,22 L846,112 L858,70 L870,70 L886,62 L902,70 H1030 L1042,58 L1054,70 L1064,70 L1074,22 L1086,112 L1098,70 L1110,70 L1126,62 L1142,70" fill="none" stroke="url(#f)" stroke-width="2.5" filter="url(#g)"/>
+<text x="600.0" y="148" text-anchor="middle" font-size="17" fill="#00ff41" letter-spacing="3">&gt; SESSION TERMINATED // THANKS FOR VISITING</text>
+<rect class="blink" x="868" y="133" width="10" height="19" fill="#00ff41"/>
+</svg>
