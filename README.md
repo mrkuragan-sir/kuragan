@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://mrkuragan-sir.github.io">
-    <img src="./assets/header.svg" width="100%" alt="Emirhan Sirma — Kuragan" />
+    <img src="./assets/header.svg" width="100%" alt="Emirhan Sirma (Kuragan)" />
   </a>
 </p>
 
@@ -71,4 +71,4 @@
   <img src="./assets/footer.svg" width="100%" />
 </p>
 
-<!-- Görseller scripts/gen_assets.py ile üretilir. Projeyi değiştirmek için o dosyayı düzenleyip çalıştır. -->
+<!-- svgs are generated with scripts/gen_assets.py -->

@@ -1,7 +1,6 @@
-"""Generates the animated SVG assets for the profile README.
-Run:  python scripts/gen_assets.py   -> writes ./assets/*.svg
-"""
-import os, random
+# builds the svgs used in the readme -> assets/
+# usage: python scripts/gen_assets.py
+import os, math, random
 from xml.sax.saxutils import escape
 
 random.seed(7)
@@ -55,7 +54,7 @@ def hud_corners(x, y, w, h, s=22, color=G, op=0.7):
     return f'<path d="{p}" fill="none" stroke="{color}" stroke-width="2" opacity="{op}"/>'
 
 
-# ═══════════════════════════════ HEADER ═══════════════════════════════
+# ---- header ----
 def header():
     W, H = 1200, 400
     roles = ["Computer Engineering Student", "Computer Vision // YOLO // Tracking",
@@ -106,7 +105,6 @@ def header():
         f'<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" '
         f'repeatCount="indefinite"/></g>')
     for ang, dist, lab in [(35, .62, "TGT-01"), (150, .8, "TGT-02"), (255, .4, "TGT-03")]:
-        import math
         bx = math.cos(math.radians(ang)) * R * dist; by = math.sin(math.radians(ang)) * R * dist
         b = ang / 360 * 4
         radar.append(
@@ -190,7 +188,7 @@ def header():
     save("header.svg", svg)
 
 
-# ═══════════════════════════════ SECTION TITLES ═══════════════════════════════
+# ---- section titles ----
 def section(file, num, cmd, title):
     W, H = 1200, 74
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">
@@ -213,7 +211,7 @@ def section(file, num, cmd, title):
     save(file, svg)
 
 
-# ═══════════════════════════════ NEOFETCH / ABOUT ═══════════════════════════════
+# ---- neofetch / about ----
 def about():
     W, H = 1200, 600
     cmd = "neofetch --kuragan"
@@ -253,8 +251,8 @@ def about():
     typing = "".join(f'<tspan>{escape(ch)}</tspan>' for ch in cmd)
 
     cx, cyl = 235, 330
-    hexpts = " ".join(f"{cx + 95*__import__('math').cos(__import__('math').radians(a)):.1f},"
-                      f"{cyl + 95*__import__('math').sin(__import__('math').radians(a)):.1f}" for a in range(30, 390, 60))
+    hexpts = " ".join(f"{cx + 95*math.cos(math.radians(a)):.1f},"
+                      f"{cyl + 95*math.sin(math.radians(a)):.1f}" for a in range(30, 390, 60))
     prompt_y = H - 36
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">
@@ -281,7 +279,7 @@ def about():
 <rect width="{W}" height="44" fill="#0b1410"/>
 <line x1="0" x2="{W}" y1="44" y2="44" stroke="{DIM}"/>
 <circle cx="26" cy="22" r="7" fill="#ff5f56"/><circle cx="50" cy="22" r="7" fill="#ffbd2e"/><circle cx="74" cy="22" r="7" fill="#27c93f"/>
-<text x="{W/2}" y="27" text-anchor="middle" font-size="13" fill="{MUT}">kuragan@github: ~ — zsh — 120×36</text>
+<text x="{W/2}" y="27" text-anchor="middle" font-size="13" fill="{MUT}">kuragan@github: ~ (zsh)</text>
 
 <text x="40" y="92" font-size="17"><tspan fill="{G}" font-weight="700">kuragan@github</tspan><tspan fill="{TXT}">:</tspan><tspan fill="#2f81f7">~</tspan><tspan fill="{TXT}">$ </tspan></text>
 <text x="{40+19*10.2:.1f}" y="92" font-size="17" fill="{TXT}" clip-path="url(#tclip)" textLength="{n*10.2:.1f}" lengthAdjust="spacingAndGlyphs">{escape(cmd)}</text>
@@ -308,13 +306,13 @@ def about():
     save("about.svg", svg)
 
 
-# ═══════════════════════════════ PROJECTS ═══════════════════════════════
+# ---- projects ----
 def projects():
     cards = [
         ("01", "air_defense_system", ["Real-time target detection, tracking and", "lock-on system built for Teknofest."], ["Python", "YOLO", "OpenCV"]),
         ("02", "autotube", ["Fully automated pipeline producing YouTube", "Shorts & long-form videos end-to-end."], ["Python", "LLM APIs", "FFmpeg"]),
         ("03", "cv_annotation_tool", ["Free & unlimited bbox / polygon labeling", "with built-in data augmentation."], ["Python", "OpenCV"]),
-        ("04", "study_planner", ["Cross-platform planner for schedules, topics", "and resources — with an AI assistant."], ["Flutter", "Gemini API"]),
+        ("04", "study_planner", ["Cross-platform planner for schedules, topics", "and resources, with an AI assistant."], ["Flutter", "Gemini API"]),
         ("05", "lecture_to_pdf", ["Records Turkish lectures and turns them", "into clean, readable PDF documents."], ["Mobile", "Speech-to-Text"]),
         ("06", "next_project.exe", ["Something new is compiling...", "stay tuned."], []),
     ]
@@ -329,7 +327,7 @@ def projects():
              f'<rect width="{cw}" height="{ch}" rx="12" fill="{BG}" stroke="{G}" stroke-opacity="{.18 if not last else .12}" '
              f'{"stroke-dasharray=\"6 6\"" if last else ""}/>',
              f'<rect width="4" height="{ch-40}" y="20" rx="2" fill="{G}" opacity="{.9 if not last else .3}"/>',
-             # shimmer along top border
+             # light running on the top edge
              f'<svg width="{cw-12}" x="6" height="3"><rect y="0" width="140" height="2" fill="url(#shim)"><animate attributeName="x" from="-140" to="{cw}" '
              f'dur="3.5s" begin="{d+i*0.4:.2f}s" repeatCount="indefinite"/></rect></svg>',
              f'<text x="30" y="40" font-size="13" fill="{MUT}" letter-spacing="2">[{num}]  ~/projects/</text>',
@@ -350,7 +348,7 @@ def projects():
             g.append(f'<rect x="{tx}" y="{ch-62}" width="{w:.0f}" height="24" rx="5" fill="{G}" fill-opacity=".06" stroke="{G}" stroke-opacity=".3"/>'
                      f'<text x="{tx + w/2:.1f}" y="{ch-45}" text-anchor="middle" font-size="13" fill="{G2}">{escape(t)}</text>')
             tx += w + 8
-        # indeterminate progress bar
+        # loading bar
         bw = cw - 60
         g.append(f'<rect x="30" y="{ch-24}" width="{bw}" height="3" rx="1.5" fill="{DIM}"/>'
                  f'<svg x="30" y="{ch-26}" width="{bw}" height="7"><rect y="2" width="140" height="3" rx="1.5" fill="url(#bar)" filter="url(#g)">'
@@ -373,12 +371,11 @@ def projects():
     save("projects.svg", svg)
 
 
-# ═══════════════════════════════ FOOTER ═══════════════════════════════
+# ---- footer ----
 def footer():
     W, H = 1200, 170
-    # EKG path
-    pts, x = [], 0
-    path = f"M0,70"
+    x = 0
+    path = "M0,70"
     while x < W:
         path += f" H{x+70} L{x+82},58 L{x+94},70 L{x+104},70 L{x+114},22 L{x+126},112 L{x+138},70 L{x+150},70 L{x+166},62 L{x+182},70"
         x += 240
